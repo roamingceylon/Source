@@ -50,6 +50,8 @@ production stylesheet in assets/built/screen.css
 /* 1. Variables
 /* ---------------------------------------------------------- */
 
+@import '/custom.css';
+
 :root {
     --color-white: #fff;
     --color-lighter-gray: rgb(0 0 0 / 0.05);
@@ -531,10 +533,6 @@ body[class*=" gh-font-heading"]:not(.gh-font-heading-fira-sans):not(.gh-font-hea
 @media (min-width: 768px) {
     .gh-navigation-brand .gh-search {
         display: none;
-    }
-
-    .gh-navigation:not(.is-dropdown-loaded) .gh-navigation-menu .nav > li {
-        opacity: 0;
     }
 }
 
