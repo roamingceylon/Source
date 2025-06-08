@@ -122,3 +122,77 @@ ul.subnav li a:focus-visible {
         display: none;
     }
 }
+
+/* Popular Tags CSS */
+
+.tag-row {
+    background: none;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    max-width: 1200px;
+}
+
+.tag-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 160px;
+    transition: transform 0.2s ease;
+}
+
+.tag-card:hover {
+    transform: translateY(-4px);
+}
+
+.tag-image-link {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s;
+}
+
+.tag-image-link:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.tag-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* transition: transform 0.3s ease; */
+}
+
+/* .tag-image-link:hover .tag-img {
+    transform: scale(1.05);
+} */
+
+.tag-name {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-darkgrey);
+    text-decoration: none;
+}
+
+.tag-name:hover {
+    color: var(--color-base);
+    text-decoration: underline;
+}
+
+.tag-count {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 0.25rem;
+}

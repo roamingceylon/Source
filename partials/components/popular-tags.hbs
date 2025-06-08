@@ -1,0 +1,30 @@
+<section class="gh-container gh-outer">
+    <div class="gh-container-inner gh-inner">
+            <h2 class="gh-container-title">
+                Popular Tags
+            </h2>
+            <main class="gh-main">
+                <section class="tag-row">
+                    <div class="inner">
+                        <ul class="tag-list">
+                            {{#get "pages" slug="popular-tags" limit="1" include="tags"}}
+                                {{#foreach pages}}
+                                    {{#foreach tags}}
+                                    <li class="tag-card gh-card">
+                                            <a href="{{url}}" class="tag-image-link">
+                                                {{#if feature_image}}
+                                                    <img src="{{feature_image}}" alt="{{name}}" class="tag-img"/>
+                                                {{/if}}
+                                            </a>
+                                            <a href="{{url}}" class="tag-name">{{name}}</a>
+                                            <span class="tag-count">{{count.posts}} posts</span>
+                                    </li>
+                                    {{/foreach}}
+                                {{/foreach}}
+                            {{/get}}
+                        </ul>
+                    </div>
+                </section>
+            </main>
+    </div>
+</section>
