@@ -10,15 +10,19 @@
                             {{#get "pages" slug="popular-tags" limit="1" include="tags"}}
                                 {{#foreach pages}}
                                     {{#foreach tags}}
-                                    <li class="tag-card gh-card">
-                                            <a href="{{url}}" class="tag-image-link">
-                                                {{#if feature_image}}
-                                                    <img src="{{feature_image}}" alt="{{name}}" class="tag-img"/>
-                                                {{/if}}
-                                            </a>
-                                            <a href="{{url}}" class="tag-name">{{name}}</a>
-                                            <span class="tag-count">{{count.posts}} posts</span>
-                                    </li>
+                                    {{#get 'tags' limit='1' slug=slug include='count.posts' order='count.posts desc'}}
+                                        {{#foreach tags}}
+                                        <li class="tag-card gh-card">
+                                                <a href="{{url}}" class="tag-image-link">
+                                                    {{#if feature_image}}
+                                                        <img src="{{feature_image}}" alt="{{name}}" class="tag-img"/>
+                                                    {{/if}}
+                                                </a>
+                                                <a href="{{url}}" class="tag-name">{{name}}</a>
+                                                <span class="tag-count">{{count.posts}} posts</span>
+                                        </li>
+                                        {{/foreach}}
+                                    {{/get}}
                                     {{/foreach}}
                                 {{/foreach}}
                             {{/get}}
