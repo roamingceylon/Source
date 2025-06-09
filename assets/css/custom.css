@@ -5,7 +5,7 @@ ul.dropdown-nav {
     margin: 0;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 1rem;
 }
 
@@ -53,7 +53,7 @@ ul.subnav {
     top: 35px;
     left: 0;
     background: #fff;
-    padding: 0.5rem 0;
+    padding: 0.5rem;
     min-width: 200px;
     border-radius: 0.5rem;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
@@ -96,13 +96,14 @@ ul.subnav li a:focus-visible {
     ul.dropdown-nav {
         flex-direction: column;
         gap: 0;
+        transition: all 1s;
     }
 
     ul.dropdown-nav > li {
         width: 100%;
     }
 
-    ul.subnav {
+    .open ul.subnav {
         display: block;
         position: static;
         background: transparent;
@@ -110,16 +111,14 @@ ul.subnav li a:focus-visible {
         opacity: 1 !important;
         visibility: visible !important;
         transform: none !important;
-        padding: 1rem;
-        margin-top: 0.25rem;
+        padding: 0;
     }
 
     ul.subnav li a {
         padding: 0.5rem 1rem;
     }
-
-    ul.dropdown-nav > li.has-dropdown > a::after {
-        display: none;
+    ul.dropdown-nav > li.has-dropdown.open > a::after {
+        transform: rotate(180deg);
     }
 }
 
