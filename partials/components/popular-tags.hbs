@@ -1,4 +1,4 @@
-<section class="gh-container gh-outer">
+<section class="gh-container gh-outer has-sidebar popular-tags">
     <div class="gh-container-inner gh-inner">
             <h2 class="gh-container-title">
                 Popular Tags
@@ -18,8 +18,12 @@
                                                         <img src="{{feature_image}}" alt="{{name}}" class="tag-img"/>
                                                     {{/if}}
                                                 </a>
-                                                <a href="{{url}}" class="tag-name">{{name}}</a>
-                                                <span class="tag-count">{{count.posts}} posts</span>
+                                                <div>
+                                                    <h3>
+                                                        <a href="{{url}}" class="tag-name">{{name}}</a>
+                                                    </h3>
+                                                    <span class="tag-count">{{count.posts}} posts</span>
+                                                </div>
                                         </li>
                                         {{/foreach}}
                                     {{/get}}

@@ -9,7 +9,7 @@ ul.dropdown-nav {
     gap: 1rem;
 }
 
-ul.dropdown-nav > li {
+ul.dropdown-nav>li {
     position: relative;
     list-style: none;
 }
@@ -22,18 +22,18 @@ ul.dropdown-nav a {
     padding: 0.75rem 1rem;
     font-weight: 600;
     color: var(--ghost-accent-color, #111);
-    border-radius: 0.375rem;
+    border-radius: 0;
     transition: background-color 0.3s ease;
     gap: 0.5rem;
 }
 
 /* Arrow Icon using SVG background */
-ul.dropdown-nav > li.has-dropdown > a::after {
+ul.dropdown-nav>li.has-dropdown>a::after {
     content: "";
     display: inline-block;
     width: 1.25em;
     height: 1.25em;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>');
     background-repeat: no-repeat;
     background-size: contain;
     transition: transform 0.3s ease;
@@ -41,7 +41,7 @@ ul.dropdown-nav > li.has-dropdown > a::after {
 }
 
 /* Rotate arrow on hover */
-ul.dropdown-nav > li.has-dropdown:hover > a::after {
+ul.dropdown-nav>li.has-dropdown:hover>a::after {
     transform: rotate(180deg);
 }
 
@@ -53,9 +53,10 @@ ul.subnav {
     top: 35px;
     left: 0;
     background: #fff;
+    color: #15171a;
     padding: 0.5rem;
     min-width: 200px;
-    border-radius: 0.5rem;
+    border-radius: 0;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -72,7 +73,7 @@ ul.subnav li a {
     font-weight: 400;
     white-space: nowrap;
     color: #333;
-    border-radius: 0.375rem;
+    border-radius: 0;
     transition: background-color 0.2s ease;
 }
 
@@ -84,7 +85,7 @@ ul.subnav li a:focus-visible {
 
 /* Show dropdown on hover (desktop) */
 @media (min-width: 769px) {
-    .has-dropdown:hover > .subnav {
+    .has-dropdown:hover>.subnav {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
@@ -99,7 +100,7 @@ ul.subnav li a:focus-visible {
         transition: all 1s;
     }
 
-    ul.dropdown-nav > li {
+    ul.dropdown-nav>li {
         width: 100%;
     }
 
@@ -112,12 +113,14 @@ ul.subnav li a:focus-visible {
         visibility: visible !important;
         transform: none !important;
         padding: 0;
+        color: white;
     }
 
     ul.subnav li a {
         padding: 0.5rem 1rem;
     }
-    ul.dropdown-nav > li.has-dropdown.open > a::after {
+
+    ul.dropdown-nav>li.has-dropdown.open>a::after {
         transform: rotate(180deg);
     }
 }
@@ -133,9 +136,8 @@ ul.subnav li a:focus-visible {
     flex-wrap: wrap;
     gap: 2.5rem;
     padding: 0;
-    margin: 0 auto;
+    margin: 0;
     list-style: none;
-    max-width: 1200px;
 }
 
 .tag-card {
@@ -143,27 +145,24 @@ ul.subnav li a:focus-visible {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    flex: 1 1 90px;  
-    max-width: 160px; 
+    flex: 1 1 90px;
+    max-width: 160px;
     transition: transform 0.2s ease;
-}
-
-.tag-card:hover {
-    transform: translateY(-4px);
+    gap: 20px;
 }
 
 .tag-image-link {
     display: block;
     width: 100%;
     aspect-ratio: 1 / 1;
-    border-radius: 12px;
+    border-radius: 0;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.3s;
 }
 
 .tag-image-link:hover {
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .tag-img {
@@ -180,10 +179,10 @@ ul.subnav li a:focus-visible {
 
 .tag-name {
     margin-top: 1rem;
-    font-size: 1rem;
-    font-weight: 600;
+    font-weight: 550;
     color: var(--color-darkgrey);
     text-decoration: none;
+    font-family: var(--gh-font-heading, var(--font-serif));;
 }
 
 .tag-name:hover {
@@ -192,7 +191,21 @@ ul.subnav li a:focus-visible {
 }
 
 .tag-count {
-    font-size: 0.85rem;
+    font-size: 1.45rem;
     color: #888;
     margin-top: 0.25rem;
+}
+
+.gh-outer.popular-tags .gh-main {
+    grid-column: 1 / span 16;
+}
+
+.gh-container.popular-tags.has-sidebar .gh-main:after {
+    content: none;
+}
+
+@media (max-width: 750px){
+    .tag-card {
+        max-width: 110px;
+    }
 }
