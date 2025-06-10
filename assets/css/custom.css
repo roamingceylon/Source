@@ -129,13 +129,13 @@ ul.subnav li a:focus-visible {
 
 .tag-row {
     background: none;
-    padding: 0 1rem;
+    padding: 0;
 }
 
 .tag-list {
     display: flex;
     gap: 2rem;
-    padding: 1rem 0;
+    padding: 0;
     margin: 0;
     list-style: none;
     overflow-x: auto;
@@ -170,8 +170,7 @@ ul.subnav li a:focus-visible {
     align-items: center;
     text-align: center;
     flex: 0 0 auto;
-    width: 130px;
-    max-width: 140px;
+    width: 150px;
     gap: 0.75rem;
 }
 
@@ -212,12 +211,17 @@ ul.subnav li a:focus-visible {
 
 .tag-name {
     margin: 0;
-    font-weight: 550;
-    font-size: 16px;
+    font-weight: 400;
+    font-size: 14px;
     color: var(--color-darkgrey);
     text-decoration: none;
     font-family: var(--gh-font-heading, var(--font-serif));
     line-height: 1.3;
+    position: absolute;
+    background-color: white;
+    bottom: 1rem;
+    left: 1rem;
+    padding: 2px 6px;
 }
 
 .tag-name:hover {
@@ -236,35 +240,19 @@ ul.subnav li a:focus-visible {
 
 /* Mobile responsiveness */
 @media (max-width: 750px) {
-    .tag-row {
-        padding: 0 0.5rem;
-    }
-
     .tag-list {
         gap: 1.5rem;
-        padding: 0.5rem 0;
     }
 
     .tag-card {
-        min-width: 80px;
-        max-width: 100px;
+        width: 110px;
         gap: 0.5rem;
     }
 
     .tag-name {
-        font-size: 1.2rem;
+        font-size: 10px;
+        bottom: 5px;
+        left: 5px;
     }
 
-}
-
-@media (max-width: 480px) {
-    .tag-card {
-        min-width: 70px;
-        max-width: 85px;
-        gap: 0;
-    }
-
-    .tag-list {
-        gap: 1.25rem;
-    }
 }
