@@ -256,3 +256,9 @@ ul.subnav li a:focus-visible {
     }
 
 }
+
+/* Home Page */
+
+.home-template .gh-header.is-classic {
+    padding-block: 160px;
+}
